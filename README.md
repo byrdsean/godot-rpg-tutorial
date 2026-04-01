@@ -9,4 +9,4 @@ Completed:
 Watching:
 https://www.youtube.com/watch?v=rKQrp2U11Ag&list=PLfcCiyd_V9GH8M9xd_QKlyU8jryGcy3Xa&index=2
 
-timestamp: 7:14
+timestamp: 14:08
