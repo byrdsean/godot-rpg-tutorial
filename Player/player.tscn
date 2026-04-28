@@ -1,7 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cdgtnxcrnorrx"]
+[gd_scene load_steps=14 format=3 uid="uid://cdgtnxcrnorrx"]
 
-[ext_resource type="Texture2D" uid="uid://c6cyjuftio2hk" path="res://Player/Sprites/ExamplePlayerSprite.png" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://ji5a8xxjrnq0" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://c6cyjuftio2hk" path="res://player/Sprites/ExamplePlayerSprite.png" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://dpxfyqvwjepda" path="res://player/Scripts/player.gd" id="1_4ntmi"]
+[ext_resource type="Script" uid="uid://bqt4d7hpi0gh8" path="res://player/Scripts/StateMachine/state_machine.gd" id="3_btcbx"]
+[ext_resource type="Script" uid="uid://6rr2rly2fcm8" path="res://player/Scripts/StateMachine/idle_state.gd" id="4_gwnis"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sh265"]
 radius = 10.770329
@@ -150,3 +152,9 @@ root_node = NodePath("../Sprite2D")
 libraries = {
 &"": SubResource("AnimationLibrary_fhl08")
 }
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_btcbx")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("4_gwnis")
