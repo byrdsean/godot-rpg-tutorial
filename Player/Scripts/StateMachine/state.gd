@@ -1,7 +1,8 @@
 @abstract
 class_name State extends Node
 
-var animation_name: String
+var current_animation: String
+var movement_direction: Vector2
 
 func enter() -> void:
 	pass
@@ -18,5 +19,5 @@ func physics_process(delta: float) -> State:
 	return null
 
 @warning_ignore("unused_parameter")
-func handle_input(event: InputEvent) -> void:
-	pass
+func handle_input(event: InputEvent) -> State:
+	return null

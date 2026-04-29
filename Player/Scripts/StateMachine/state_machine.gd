@@ -25,14 +25,23 @@ func change_state(new_state: State) -> void:
 func process(delta: float) -> void:
 	var new_state = current_state.process(delta)
 	change_state(new_state)
-	
-	var current_animation = player.animation_player.current_animation
-	if current_animation != current_state.animation_name:
-		player.animation_player.play(current_state.animation_name)
+	play_current_animation()
+	player.update_velocity(current_state.movement_direction)
 
 func physics_process(delta: float) -> void:
 	var new_state = current_state.physics_process(delta)
 	change_state(new_state)
 
 func handle_input(event: InputEvent) -> void:
-	current_state.handle_input(event)
+	var new_state = current_state.handle_input(event)
+	change_state(new_state)
+
+func play_current_animation() -> void:
+	if !current_state:
+		return
+		
+	var player_animation = player.animation_player.current_animation
+	var current_state_animation = current_state.current_animation
+	
+	if current_state_animation != player_animation:
+		player.animation_player.play(current_state_animation)

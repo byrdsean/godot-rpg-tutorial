@@ -1,11 +1,11 @@
-class_name Idle_State extends State
+class_name WalkDownState extends State
 
 @onready var walk_up: WalkUpState = $"../WalkUp"
-@onready var walk_down: WalkDownState = $"../WalkDown"
+@onready var idle: Idle_State = $"../Idle"
 
 func enter() -> void:
-	self.current_animation = PlayerAnimationConstants.IDLE_DOWN
-	self.movement_direction = Vector2.ZERO
+	self.current_animation = PlayerAnimationConstants.WALK_DOWN
+	self.movement_direction.y = 1
 	
 func exit() -> void:
 	pass
@@ -19,7 +19,5 @@ func physics_process(delta: float) -> State:
 func handle_input(event: InputEvent) -> State:
 	if 0 < event.get_action_strength(InputConstants.UP):
 		return walk_up
-	elif 0 < event.get_action_strength(InputConstants.DOWN):
-		return walk_down
 	else:
-		return null
+		return idle
