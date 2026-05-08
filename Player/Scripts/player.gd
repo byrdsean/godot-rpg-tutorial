@@ -1,10 +1,6 @@
 class_name Player extends CharacterBody2D
 
-var move_speed : float = 100.0
-#var movement_direction: Vector2 = Vector2.ZERO
-#var facing_direction: Vector2 = Vector2.DOWN
-#var movement_state = "idle"
-#
+var facing_direction: Vector2 = Vector2.DOWN
 #@onready var sprite: Sprite2D = $Sprite2D
 
 @onready var state_machine: State_Machine = $StateMachine
@@ -23,10 +19,15 @@ func _physics_process(delta: float) -> void:
 	state_machine.physics_process(delta)
 
 func _unhandled_input(event: InputEvent) -> void:
+	set_facing_direction(event)
 	state_machine.handle_input(event)
 
-func update_velocity(movement_direction: Vector2) -> void:
-	if !movement_direction:
-		return
-
-	velocity = movement_direction * move_speed
+func set_facing_direction(event: InputEvent) -> void:
+	if 0 < event.get_action_strength(InputConstants.LEFT):
+		facing_direction = Vector2.LEFT
+	elif 0 < event.get_action_strength(InputConstants.RIGHT):
+		facing_direction = Vector2.RIGHT
+	elif 0 < event.get_action_strength(InputConstants.UP):
+		facing_direction = Vector2.UP
+	elif 0 < event.get_action_strength(InputConstants.DOWN):
+		facing_direction = Vector2.DOWN
