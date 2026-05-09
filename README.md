@@ -7,4 +7,4 @@ Completed:
 1. https://www.youtube.com/watch?v=QPeycNt29tY&list=PLfcCiyd_V9GH8M9xd_QKlyU8jryGcy3Xa&index=1
 
 Watching:
-https://www.youtube.com/watch?v=ozUS1cSgFKs&list=PLfcCiyd_V9GH8M9xd_QKlyU8jryGcy3Xa&index=3
+https://www.youtube.com/watch?v=bgSlXYs5dw4&list=PLfcCiyd_V9GH8M9xd_QKlyU8jryGcy3Xa&index=5
