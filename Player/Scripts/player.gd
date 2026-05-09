@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 var facing_direction: Vector2 = Vector2.DOWN
-#@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Sprite2D
 
 @onready var state_machine: State_Machine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -25,9 +25,13 @@ func _unhandled_input(event: InputEvent) -> void:
 func set_facing_direction(event: InputEvent) -> void:
 	if 0 < event.get_action_strength(InputConstants.LEFT):
 		facing_direction = Vector2.LEFT
+		sprite.flip_h = true
 	elif 0 < event.get_action_strength(InputConstants.RIGHT):
 		facing_direction = Vector2.RIGHT
+		sprite.flip_h = false
 	elif 0 < event.get_action_strength(InputConstants.UP):
 		facing_direction = Vector2.UP
+		sprite.flip_h = false
 	elif 0 < event.get_action_strength(InputConstants.DOWN):
 		facing_direction = Vector2.DOWN
+		sprite.flip_h = false
