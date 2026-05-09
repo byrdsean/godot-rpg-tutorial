@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgelq6555t5sl"]
+[gd_scene load_steps=3 format=3 uid="uid://dgelq6555t5sl"]
 
 [ext_resource type="PackedScene" uid="uid://cdgtnxcrnorrx" path="res://player/player.tscn" id="1_rupst"]
+[ext_resource type="PackedScene" uid="uid://c46lyioe31o0e" path="res://tilemaps/grass-01.tscn" id="2_wt17y"]
 
 [node name="Playground" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_rupst")]
 position = Vector2(238, 150)
+
+[node name="Grass01" parent="." instance=ExtResource("2_wt17y")]

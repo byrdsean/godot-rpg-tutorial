@@ -35,9 +35,7 @@ func set_idle_movement() -> void:
 	match player.facing_direction:
 		Vector2.UP:
 			set_player_animation(PlayerAnimationConstants.IDLE_UP)
-		Vector2.LEFT:
-			set_player_animation(PlayerAnimationConstants.IDLE_SIDE)
-		Vector2.RIGHT:
+		Vector2.LEFT, Vector2.RIGHT:
 			set_player_animation(PlayerAnimationConstants.IDLE_SIDE)
 		_:
 			set_player_animation(PlayerAnimationConstants.IDLE_DOWN)
